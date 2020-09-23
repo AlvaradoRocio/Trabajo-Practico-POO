@@ -1,6 +1,6 @@
 package canciones;
 
-public class Playlist {
+public class PlayList {
 
     private Cancion canciones[] = new Cancion[10];
     private int size;
