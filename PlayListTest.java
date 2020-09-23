@@ -96,19 +96,18 @@ public class PlayListTest {
         Cancion[] actual= nueva.listaOrdenadaArtista();
         Cancion[] esperada= new Cancion[6];
        
-        esperada[1]=new Cancion("Hello", 222,"Adele");
-        esperada[2]=new Cancion("Four minutes","Madonna y Justin Timberlake", "Madonna", 240);
-        esperada[3]=new Cancion("Heart attack", 118, "Me");
-        esperada[4]=new Cancion("Baby one more time", 200);
-        esperada[5]=new Cancion("Hello", 120, "Ricky Martin");
-        esperada[6]=new Cancion("La tortura", 211, "Shakira");    
+        esperada[0]=new Cancion("Hello", 222,"Adele");
+        esperada[1]=new Cancion("Four minutes", "Madonna y Justin Timberlake","Madonna", 240);
+        esperada[2]=new Cancion("Heart attack", 118, "Me");
+        esperada[3]=new Cancion("Baby one more time", 200);
+        esperada[4]=new Cancion("Hello", 120, "Ricky Martin");
+        esperada[5]=new Cancion("La tortura", 211, "Shakira");    
         
-        
-        for(int i=0; i<6; i++){
-            assertEquals(esperada[i].getArt(), actual[i].getArt());
-            
-            
-        }
+       for(int i=0; i<6; i++){
+           assertEquals(actual[i].getArt(), esperada[i].getArt());
+           assertEquals(actual[i].getTitulo(), esperada[i].getTitulo());
+          
+        }   
     }
 
     @Test
@@ -125,7 +124,7 @@ public class PlayListTest {
         String []actualTit = new String[6];
         for(int i=0; i<6; i++){
            assertEquals(actual[i].getTitulo(), comparativa[i].getTitulo());
-           assertEquals(actual[i].getAlbum(), comparativa[i].getAlbum());
+           
         }
     }
 

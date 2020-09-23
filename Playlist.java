@@ -20,8 +20,8 @@ public class Playlist {
         this.setSize(this.getSize() + 1);
     }
 
-    public void addSong(String titulo, String album, String art, int dur) {
-        this.canciones[getSize()] = new Cancion(titulo, album, art, dur);
+    public void addSong(String titulo, String art, String album, int dur) {
+        this.canciones[getSize()] = new Cancion(titulo, art, album, dur);
         this.setSize(this.getSize() + 1);
     }
 
@@ -108,7 +108,7 @@ public class Playlist {
                 menorMayor[0] =  canciones[i].getTitulo();
             }
             if (paux[this.getSize() - 1] == canciones[i].getDur()) {
-                menorMayor[1] = "Cancion de mayor duracion: " + canciones[i].getTitulo();
+                menorMayor[1] = canciones[i].getTitulo();
             }
         }
         return menorMayor;
@@ -205,19 +205,20 @@ public class Playlist {
 
 }
 
-class Prueba{
+class Prueba2{
     public static void main(String[] args) {
-        Playlist nueva = new Playlist();
-        nueva.addSong("lala", 200);
-        nueva.addSong("lala", 222, "Adele");
-        nueva.addSong("lala", "Madonna y Justin Timberlake", "Madonna", 240);
-        nueva.addSong("estoy", 120, "Ricky Martin");
-        nueva.addSong("hello", 211, "Shakira");
-        nueva.addSong("lala", 118, "Me");
-        System.out.println(nueva.getSize());
-        nueva.eliminarCancion("Lala");
-        System.out.println(nueva.getSize());
-        
+       Playlist nueva = new Playlist();
+        nueva.addSong("Baby one more time", 200);
+        nueva.addSong("Hello", 222, "Adele");
+        nueva.addSong("Four minutes", "Madonna y Justin Timberlake", "Madonna", 240);
+        nueva.addSong("Hello", 120, "Ricky Martin");
+        nueva.addSong("La tortura", 211, "Shakira");
+        nueva.addSong("Heart attack", 118, "Me");
+        Cancion[] prueba= nueva.listaOrdenadaArtista();
+        for(int i=0; i<6; i++){
+            System.out.println(prueba[i].getArt() + " - " + prueba[i].getTitulo());
+        }
     }
     
 }
+
