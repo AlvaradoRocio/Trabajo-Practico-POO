@@ -11,7 +11,7 @@ public class Main {
 		p.addSong("alabado", "aaa", "a", 3605);	
 		p.listaOrdenadaTitulo();
 		System.out.println("Cantidad de canciones: "+ p.getSize());
-		p.deleteSong("diosito");
+		p.eliminarCancion("diosito");
 		System.out.println("Cantidad de canciones: "+ p.getSize());
 		System.out.println(p.duracionCancion("alabado"));
 		System.out.println("Duracion completa de la playlist: " + p.duracionPlaylist());

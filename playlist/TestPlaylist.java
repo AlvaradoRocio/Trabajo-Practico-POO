@@ -26,7 +26,7 @@ public class TestPlaylist {
 	}
 	@Test
 	public void deleteSongtest() {
-		this.p.deleteSong("alabado");
+		this.p.eliminarCancion("alabado");
 		int expected = 5;
 		int actual = this.p.getSize();
 		assertEquals(expected, actual);
@@ -64,35 +64,35 @@ public class TestPlaylist {
 	@Test
 	public void listaOrdenadaArtistatest() {
 		int i;	
-		Song expected[] = new Song[6];
-		expected[4]= new Song ("alabado", 5);
-		expected[0]= new Song ("alabado", "aaa", "a", 3605);
-		expected[1]= new Song ("Cordero de dios","a", 5000);
-		expected[5]= new Song ("Diosito", 500, "Ayudame porfitas");
-		expected[2]= new Song ("funcionaaaaa", "a", 20);
-		expected[3]= new Song ("la cucaracha", "c", 340);	
-		Song actual[] = this.p.listaOrdenadaArtista();
+		Cancion expected[] = new Cancion[6];
+		expected[4]= new Cancion ("alabado", 5);
+		expected[0]= new Cancion ("alabado", "aaa", "a", 3605);
+		expected[1]= new Cancion ("Cordero de dios","a", 5000);
+		expected[5]= new Cancion ("Diosito", 500, "Ayudame porfitas");
+		expected[2]= new Cancion ("funcionaaaaa", "a", 20);
+		expected[3]= new Cancion ("la cucaracha", "c", 340);	
+		Cancion actual[] = this.p.listaOrdenadaArtista();
 		
 		for(i=0; i<6; i++) {
 			assertEquals(expected[i].getArt(), actual[i].getArt());
-			assertEquals(expected[i].getTitle(), actual[i].getTitle());
+			assertEquals(expected[i].getTitulo(), actual[i].getTitulo());
 		}	
 		
 	}
 	@Test
 	public void listaOrdenadaTitulotest() {
 		int i;	
-		Song actual[] = this.p.listaOrdenadaTitulo();
-		Song expected[] = new Song[6];
-		expected[0]= new Song ("alabado", 5);
-		expected[1]= new Song ("alabado", "aaa", "a", 3605);
-		expected[2]= new Song ("Cordero de dios","a", 5000);
-		expected[3]= new Song ("Diosito", 500, "Ayudame porfitas");
-		expected[4]= new Song ("funcionaaaaa", "a", 20);
-		expected[5]= new Song ("la cucaracha", "c", 340);	
+		Cancion actual[] = this.p.listaOrdenadaTitulo();
+		Cancion expected[] = new Cancion[6];
+		expected[0]= new Cancion ("alabado", 5);
+		expected[1]= new Cancion ("alabado", "aaa", "a", 3605);
+		expected[2]= new Cancion ("Cordero de dios","a", 5000);
+		expected[3]= new Cancion ("Diosito", 500, "Ayudame porfitas");
+		expected[4]= new Cancion ("funcionaaaaa", "a", 20);
+		expected[5]= new Cancion ("la cucaracha", "c", 340);	
 		
 		for(i=0; i<6; i++) {
-			assertEquals(expected[i].getTitle(), actual[i].getTitle());
+			assertEquals(expected[i].getTitulo(), actual[i].getTitulo());
 		}	
 	}
 	
