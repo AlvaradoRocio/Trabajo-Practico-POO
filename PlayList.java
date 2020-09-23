@@ -1,6 +1,6 @@
 package canciones;
 
-public class PlayList {
+public class Playlist {
 
     private Cancion canciones[] = new Cancion[10];
     private int size;
@@ -34,25 +34,24 @@ public class PlayList {
     }
 
     public void eliminarCancion(String eliminar) {
-        int i = 0, cont = 0;
-        while (i < this.getSize()) {
+        int i=0, cont = 0;
+        while(i<this.getSize()) {
             if (eliminar.equalsIgnoreCase(canciones[i].getTitulo()) || eliminar.equalsIgnoreCase(canciones[i].getArt())
                     || eliminar.equalsIgnoreCase(canciones[i].getAlbum())
                     || eliminar.equalsIgnoreCase(getDuracionString(canciones[i].getDur()))) {
                 cont++;
                 for (int j = i; j < this.getSize() - 1; j++) {
                     canciones[j] = canciones[j + 1];
-                    i = 0;
+                    
                 }
-            } else {
-                i++;
+                canciones[this.getSize()] = null;
+                this.setSize(this.getSize() - 1);
+                
+                          
             }
+             i ++;
         }
-        while (0 < cont) {
-            canciones[this.getSize() - 1] = null;
-            this.setSize(this.getSize() - 1);
-            cont--;
-        }
+        
     }
 
     public String[] duracionCancion(String titulo) {
@@ -214,8 +213,9 @@ class Prueba{
         nueva.addSong("La tortura", 211, "Shakira");
         nueva.addSong("Heart attack", 118, "Me");
         System.out.println(nueva.getSize());
-        nueva.eliminarCancion("Heart attack");
+        nueva.eliminarCancion("Hello");
         System.out.println(nueva.getSize());
+        
     }
     
 }
