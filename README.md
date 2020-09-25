@@ -32,7 +32,7 @@ realizar los diferentes ejercicios con estos.
 -PlaylistTest.java contiene la prueba JUnit de la clase Playlist.
 
 Conclusiones:
-A forma de conclusión y análisis general de lo expuesto previamente, es posible afirmar que al programar orientado a objetos es necesario aprender a pensar cómo resolver los 
+A forma de sintesis y análisis general de lo expuesto previamente, es posible afirmar que al programar orientado a objetos es necesario aprender a pensar cómo resolver los 
 problemas de una manera distinta a como se realizaba anteriormente, en la programación estructurada. Esta forma de trabajo nos facilito la reutilización de código en distintas 
 partes del programa y en adición, gracias a las pruebas unitarias, fue posible dividir el problema en partes más pequeñas con el fin de probarlas de manera independiente y 
 aislar de forma más fácil los posibles errores que puedan surgir.
