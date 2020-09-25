@@ -25,9 +25,11 @@ java.lang, para el método "reproduccionPlaylist" (empleándose el método Math.
 En las pruebas JUnit, se consideró necesario en algunos métodos (los de ordenar la playlist) utilizar assertArraysEquals dentro de un for para poder evaluar uno por uno los
 resultados, ya que de otra forma las comparaciones eran realizadas sobre la dirección de memoria que devolvía el método. Solo en la prueba de "reproduccionPlaylist" se llamó 
 al método para que imprima por pantalla el resultado, todos los demás métodos retornan valores para poder hacer las pruebas automatizadas correctamente.
-Descripción de cada archivo *.java comprendido en solución del problema: -Playlist.java contiene la clase Playlist donde se construye un arreglo de objetos Cancion, para poder 
-realizar los diferentes ejercicios con estos. -Cancion.java contiene la clase Cancion que construye los objetos del tipo Cancion. -PlaylistTest.java contiene la prueba JUnit de 
-la clase Playlist.
+Descripción de cada archivo *.java comprendido en solución del problema:
+-Playlist.java contiene la clase Playlist donde se construye un arreglo de objetos Cancion, para poder 
+realizar los diferentes ejercicios con estos. 
+-Cancion.java contiene la clase Cancion que construye los objetos del tipo Cancion. 
+-PlaylistTest.java contiene la prueba JUnit de la clase Playlist.
 
 Conclusiones:
 A forma de conclusión y análisis general de lo expuesto previamente, es posible afirmar que al programar orientado a objetos es necesario aprender a pensar cómo resolver los 
