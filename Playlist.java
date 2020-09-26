@@ -56,7 +56,7 @@ public class Playlist {
         
     }
 
-    public String[] duracionCancion(String titulo) {
+    public int[] duracionCancion(String titulo) {
         int duracion = 0;
         int f = 0;
         for (int x = 0; x < size; x++) {
@@ -64,14 +64,14 @@ public class Playlist {
                 duracion = duracion + 1;
             }
         }
-        String[] cancionDuracion = new String[duracion];
+        int[] cancionDuracion = new int[duracion];
         if (duracion == 0) {
-            cancionDuracion[f] = " -1 ";
+            cancionDuracion[f] =  -1 ;
         } else {
             if (duracion >= 1) {
                 for (int s = 0; s < size; s++) {
                     if (canciones[s].getTitulo().equalsIgnoreCase(titulo)) {
-                        cancionDuracion[f] = this.getDuracionString(canciones[s].getDur());
+                        cancionDuracion[f] = canciones[s].getDur();
                         f++;
                     }
                 }
@@ -80,17 +80,17 @@ public class Playlist {
         return cancionDuracion;
     }
 
-    public String duracionPlaylist() {
+    public int duracionPlaylist() {
         int i, total = 0;
         for (i = 0; i < this.getSize(); i++) {
             total = total + canciones[i].getDur();
         }
-        return getDuracionString(total);
+        return total;
     }
 
-    public String[] mayorMenorduracion() {
+    public int[] mayorMenorduracion() {
         int i, k, aux, paux[] = new int[this.getSize()];
-        String[] menorMayor = new String[2];
+        int[] menorMayor = new int[2];
         for (i = 0; i < this.getSize(); i++) {
             paux[i] = canciones[i].getDur();
         }
@@ -105,10 +105,10 @@ public class Playlist {
         }
         for (i = 0; i < this.getSize(); i++) {
             if (paux[0] == canciones[i].getDur()) {
-                menorMayor[0] =  canciones[i].getTitulo();
+                menorMayor[0] =  canciones[i].getDur();
             }
             if (paux[this.getSize() - 1] == canciones[i].getDur()) {
-                menorMayor[1] = canciones[i].getTitulo();
+                menorMayor[1] = canciones[i].getDur();
             }
         }
         return menorMayor;
